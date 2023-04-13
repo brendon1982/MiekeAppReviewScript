@@ -1,3 +1,8 @@
+// Open a terminal to this folder
+// Then execute "npm i"
+// Then execute "npm start"
+// Have a good day
+
 const play_scraper = require('google-play-scraper');
 const app_store_scraper = require('app-store-scraper');
 const ObjectsToCsv = require('objects-to-csv');
