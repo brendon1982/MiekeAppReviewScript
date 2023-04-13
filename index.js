@@ -9,7 +9,7 @@ const google_app_name = 'com.lookout';
 const googleLimit = 100;
 const appleNumberOfPages = 2 // max is 10;
 
-(async () => {
+async function downloadReviews() {
    const g_reviews = await play_scraper.reviews({
     appId: google_app_name,
     sort: play_scraper.sort.NEWEST,
@@ -72,4 +72,6 @@ const appleNumberOfPages = 2 // max is 10;
   await csv.toDisk(documents_path + '/cake.csv');
 
   console.log(`All done, data has been written to ${documents_path}/cake.csv, have fun :D`);
-})();
+}
+
+downloadReviews();
