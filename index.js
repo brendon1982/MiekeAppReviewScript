@@ -18,7 +18,9 @@ async function downloadReviews() {
    const g_reviews = await play_scraper.reviews({
     appId: google_app_name,
     sort: play_scraper.sort.NEWEST,
-    num: googleLimit
+    num: googleLimit,
+    country: country,
+    lang: language
   });
 
   let a_reviews = [];
@@ -33,7 +35,6 @@ async function downloadReviews() {
 
    a_reviews = a_reviews.concat(a_reviews_page);
   }
-
 
   const g_df = g_reviews.data.map((r) => {
     return {
@@ -64,7 +65,7 @@ async function downloadReviews() {
       developer_response: null,
       developer_response_date: null,
       thumbs_up: null,
-      language_code: language,
+      language_code: null,
       country_code: country,
     };
   });
