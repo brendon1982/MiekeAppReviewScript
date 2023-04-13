@@ -66,7 +66,7 @@ async function downloadReviews() {
 
   const result = g_df.concat(a_df);
 
-  const documents_path = process.env.HOME || process.env.USERPROFILE + "/Documents";
+  const documents_path = (process.env.HOME || process.env.USERPROFILE) + "/Documents";
 
   const csv = new ObjectsToCsv(result);
   await csv.toDisk(documents_path + '/cake.csv');
