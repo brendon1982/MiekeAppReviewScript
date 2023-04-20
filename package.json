@@ -12,6 +12,7 @@
   "dependencies": {
     "app-store-scraper": "github:facundoolano/app-store-scraper",
     "google-play-scraper": "^9.1.1",
+    "lodash": "^4.17.21",
     "objects-to-csv": "^1.3.6"
   }
 }

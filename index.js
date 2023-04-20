@@ -6,6 +6,7 @@
 const play_scraper = require('google-play-scraper');
 const app_store_scraper = require('app-store-scraper');
 const ObjectsToCsv = require('objects-to-csv');
+const _ = require('lodash');
 
 const country = 'us';
 const language = 'en';
@@ -70,7 +71,7 @@ async function downloadReviews() {
     };
   });
 
-  const result = g_df.concat(a_df);
+  const result = _.uniqBy(g_df.concat(a_df), 'review_id');
 
   const documents_path = (process.env.HOME || process.env.USERPROFILE) + "/Documents";
 
